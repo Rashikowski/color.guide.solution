@@ -1,13 +1,14 @@
 {
-  "name": "",
+  "name": "color.guide.solution",
+  "homepage": "https://rashikowski.github.io/color.guide.solution/",
   "version": "1.0.0",
-  "description": "",
+  "description": "Color Guide Assignment",
   "main": "index.html",
-  "author": "",
+  "author": "rashikowski",
   "scripts": {
     "start": "run-p watch watch:styles",
     "build": "run-s clean clean:styles build:styles copy",
-    "deploy": "run-s build publish",
+    "deploy": "gh-pages -d src",
     "build:styles": "sass src/scss:src/styles",
     "watch": "live-server src",
     "watch:styles": "sass src/scss:src/styles --watch",
