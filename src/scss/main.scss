@@ -1,3 +1,102 @@
 // This is where you can import other stylesheets or write your scss code
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+/* Top Row */
+
+@mixin t-border($width, $style, $color) {
+  border-top: 100px solid $color;
+}
+
+p {
+  padding: 10px;
+}
+
+.alles {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+.yell,
+.pink,
+.blue,
+.purple {
+  width: 200px;
+  height: 200px;
+  border: 1px solid whitesmoke;
+  @include t-border(width, style, color);
+  text-align: center;
+}
+
+.yell {
+  @include t-border(width, style, #ffc83f);
+}
+
+.pink {
+  @include t-border(width, style, #fa5e5b);
+}
+
+.blue {
+  @include t-border(width, style, #1d508d);
+}
+
+.purple {
+  @include t-border(width, style, #684e79);
+}
+
+/* Bottom Row */
+
+@mixin l-border($width, $style, $color) {
+  border-left: 66.6px solid $color;
+}
+
+.alles2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.yello2,
+.pink2,
+.blue2,
+.purple2 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid whitesmoke;
+  @include l-border(width, style, color);
+}
+
+.yello2 {
+  background-color: darken($color: #ffc83f, $amount: 10);
+  @include l-border(width, style, #ffc83f);
+  border-right: 66.6px solid lighten($color: #ffc83f, $amount: 10);
+}
+
+.pink2 {
+  background-color: darken($color: #fa5e5b, $amount: 10);
+  @include l-border(width, style, #fa5e5b);
+  border-right: 66.6px solid lighten($color: #fa5e5b, $amount: 10);
+}
+
+.blue2 {
+  background-color: darken($color: #1d508d, $amount: 10);
+  @include l-border(width, style, #1d508d);
+  border-right: 66.6px solid lighten($color: #1d508d, $amount: 10);
+}
+
+.purple2 {
+  background-color: darken($color: #684e79, $amount: 10);
+  @include l-border(width, style, #684e79);
+  border-right: 66.6px solid lighten($color: #684e79, $amount: 10);
+}
+
+@media screen and (max-width: 768px) {
+  .alles,
+  .alles2 {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
